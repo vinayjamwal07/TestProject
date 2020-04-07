@@ -1,3 +1,4 @@
+package com.general.intro;
 
 public enum Day {
 	Monday,

@@ -1,11 +1,12 @@
+package com.general.intro;
 
 public class Book {
 
-	int id;    
+	int id;
 	String name;
 	String author;
-	String publisher;    
-	int quantity;   
+	String publisher;
+	int quantity;
 
 	public Book(int id, String name, String author, String publisher, int quantity) {
 		super();
@@ -16,6 +17,3 @@ public class Book {
 		this.quantity = quantity;
 	}
 }
-
-
-

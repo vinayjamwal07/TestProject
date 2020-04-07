@@ -1,19 +1,21 @@
+package com.general.intro;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArrayListExample {
-	private static Scanner scanner = new Scanner(System.in); 
-	private static GroceryList grocerylist = new GroceryList(); 
+	private static Scanner scanner = new Scanner(System.in);
+	private static GroceryList grocerylist = new GroceryList();
 
 	public static void main(String[] args) {
 
-		boolean quit= false;
-		int choice= 0;
+		boolean quit = false;
+		int choice = 0;
 		printInstruction();
 
-		while(! quit) {
+		while (!quit) {
 			System.out.println("Enter your choice: ");
-			choice= scanner.nextInt();
+			choice = scanner.nextInt();
 			scanner.nextLine();
 
 			switch (choice) {
@@ -58,10 +60,10 @@ public class ArrayListExample {
 
 		ArrayList<String> nextArray = new ArrayList<String>(grocerylist.getGroceryList());
 
-		/* Converting arraylist to the array*/
+		/* Converting arraylist to the array */
 
-		String [] mArray= new String[grocerylist.getGroceryList().size()];
-		mArray = grocerylist.getGroceryList().toArray(mArray);		
+		String[] mArray = new String[grocerylist.getGroceryList().size()];
+		mArray = grocerylist.getGroceryList().toArray(mArray);
 
 	}
 
@@ -88,7 +90,7 @@ public class ArrayListExample {
 		scanner.nextLine();
 		System.out.println("Enter the replacement item:");
 		String newItem = scanner.nextLine();
-		grocerylist.modifyGroceryitem(itemNo,newItem);
+		grocerylist.modifyGroceryitem(itemNo, newItem);
 	}
 
 	private static void removeItem() {
@@ -100,10 +102,10 @@ public class ArrayListExample {
 	private static void searchItem() {
 		System.out.println("Enter the item to search: ");
 		String searchItem = scanner.nextLine();
-		if(grocerylist.onFile(searchItem)){
-			System.out.println("Found "+searchItem+ " in the grocery list");
-		}else {
-			System.out.println(searchItem+ " is not in shopping list");
+		if (grocerylist.onFile(searchItem)) {
+			System.out.println("Found " + searchItem + " in the grocery list");
+		} else {
+			System.out.println(searchItem + " is not in shopping list");
 		}
 
 	}

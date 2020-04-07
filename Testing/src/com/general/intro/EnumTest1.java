@@ -1,3 +1,4 @@
+package com.general.intro;
 
 import java.util.EnumSet;
 
@@ -52,27 +53,23 @@ enum HexColor {
 	_ff_00_00, _00_ff_00, _00_00_ff;
 }
 
-
-enum Color{ 
-	RED,BLUE,GREEN;
+enum Color {
+	RED, BLUE, GREEN;
 
 	private HexColor hexcolor;
 
-	public HexColor getHexcolor(Color color) { 
-		return hexcolor; 
+	public HexColor getHexcolor(Color color) {
+		return hexcolor;
 	}
 
-	static { 
+	static {
 		RED.hexcolor = HexColor._ff_00_00;
 		GREEN.hexcolor = HexColor._00_ff_00;
 		BLUE.hexcolor = HexColor._00_00_ff;
 
 	}
 
-
 }
-
-
 
 public class EnumTest1 {
 
@@ -99,6 +96,5 @@ public class EnumTest1 {
 
 		// RED.hexcolor = HexColor._ff_00_00;
 
-		
 	}
 }

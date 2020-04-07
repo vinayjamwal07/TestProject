@@ -1,3 +1,5 @@
+package com.general.intro;
+
 import java.util.Scanner;
 
 // Create a program that implements a simple mobile phone with the following capabilities.
@@ -14,20 +16,18 @@ import java.util.Scanner;
 // MobilePhone should do everything with Contact objects only.
 public class ArrayListChallange {
 
-	private static Scanner scaneer = new Scanner (System.in);
-	private  static MobilePhone mobilePhone = new MobilePhone("0032 5451 53"); 
+	private static Scanner scaneer = new Scanner(System.in);
+	private static MobilePhone mobilePhone = new MobilePhone("0032 5451 53");
 
 	public static void main(String[] args) {
 
-		boolean quit= false;
+		boolean quit = false;
 		startPhone();
 		printAction();
 
-
-
-		while(!quit) {
+		while (!quit) {
 			System.out.println("\n Enter action: (6 to show available action)");
-			int action= scaneer.nextInt();
+			int action = scaneer.nextInt();
 			scaneer.nextLine();
 
 			switch (action) {
@@ -68,18 +68,18 @@ public class ArrayListChallange {
 		System.out.println("Enter the phone number: ");
 		String phone = scaneer.nextLine();
 		Contact newContact = Contact.createContact(name, phone);
-		if(mobilePhone.addNewContact(newContact) ) {
-			System.out.println("New contact added: name = "+name+", phone= "+phone);
-		}else {
-			System.out.println("Cannot add, "+name+" already on file");
+		if (mobilePhone.addNewContact(newContact)) {
+			System.out.println("New contact added: name = " + name + ", phone= " + phone);
+		} else {
+			System.out.println("Cannot add, " + name + " already on file");
 		}
 	}
-	
+
 	private static void updateContact() {
 		System.out.println("Enter existing contact name: ");
 		String name = scaneer.nextLine();
 		Contact existingContact = mobilePhone.queryContact(name);
-		if(existingContact == null) {
+		if (existingContact == null) {
 			System.out.println("Contact not found.");
 			return;
 		}
@@ -88,63 +88,53 @@ public class ArrayListChallange {
 		System.out.println("Enter new phone number: ");
 		String newnumber = scaneer.nextLine();
 		Contact newContact = Contact.createContact(newName, newnumber);
-		if(mobilePhone.updateContact(existingContact, newContact)) {
+		if (mobilePhone.updateContact(existingContact, newContact)) {
 			System.out.println("Sucessfully updated record");
-		}else {
+		} else {
 			System.out.println("Error updating record");
 		}
-		
+
 	}
-	
+
 	private static void removeContact() {
 		System.out.println("Enter existing contact name: ");
 		String name = scaneer.nextLine();
 		Contact existingContact = mobilePhone.queryContact(name);
-		if(existingContact == null) {
+		if (existingContact == null) {
 			System.out.println("Contact not found.");
 			return;
 		}
-		
-		if(mobilePhone.removeContact(existingContact)) {
+
+		if (mobilePhone.removeContact(existingContact)) {
 			System.out.println("Successfully deleted");
-		}else {
+		} else {
 			System.out.println("Error deleting contact");
 		}
-		
+
 	}
+
 	private static void queryContact() {
 		System.out.println("Enter existing contact name: ");
 		String name = scaneer.nextLine();
 		Contact existingContact = mobilePhone.queryContact(name);
-		if(existingContact == null) {
+		if (existingContact == null) {
 			System.out.println("Contact not found.");
 			return;
-		}	
-		System.out.println("Name "+existingContact.getName()+" phone number is "+existingContact.getPhoneNumber());	
+		}
+		System.out
+				.println("Name " + existingContact.getName() + " phone number is " + existingContact.getPhoneNumber());
 	}
-	
 
 	private static void startPhone() {
-		System.out.println("Starting phone........");	
+		System.out.println("Starting phone........");
 	}
-
 
 	private static void printAction() {
 		System.out.println("\nAvailable action : \nPress ");
-		System.out.println("\t 0 - to shutdown\n"+
-				"\t 1 - to print contacts\n"+
-				"\t 2 - to add new contact\n"+
-				"\t 3 - to update an existing contact\n"+
-				"\t 4 - to remove an existing contact\n"+
-				"\t 5 - query if an existing contact exist\n"+
-				"\t 6 - to print a list of available action");
+		System.out.println("\t 0 - to shutdown\n" + "\t 1 - to print contacts\n" + "\t 2 - to add new contact\n"
+				+ "\t 3 - to update an existing contact\n" + "\t 4 - to remove an existing contact\n"
+				+ "\t 5 - query if an existing contact exist\n" + "\t 6 - to print a list of available action");
 		System.out.println("Choose your action: ");
 	}
-
-
-
-
-
-
 
 }

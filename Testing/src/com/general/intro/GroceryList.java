@@ -1,9 +1,10 @@
+package com.general.intro;
+
 import java.util.ArrayList;
 
 public class GroceryList {
-	private ArrayList<String> groceryList= new ArrayList<String>();
+	private ArrayList<String> groceryList = new ArrayList<String>();
 
-	
 	public ArrayList<String> getGroceryList() {
 		return groceryList;
 	}
@@ -14,15 +15,15 @@ public class GroceryList {
 	}
 
 	public void printGrocerylist() {
-		System.out.println("you have "+ groceryList.size()+" items in your grocery list");
-		for(int i=0; i<groceryList.size();i++) {
-			System.out.println((i+1)+". "+groceryList.get(i));
+		System.out.println("you have " + groceryList.size() + " items in your grocery list");
+		for (int i = 0; i < groceryList.size(); i++) {
+			System.out.println((i + 1) + ". " + groceryList.get(i));
 		}
 	}
 
-	public void modifyGroceryitem(String currentItem,String newItem) {
-		int position = finditems(currentItem); 
-		if( position >= 0) {
+	public void modifyGroceryitem(String currentItem, String newItem) {
+		int position = finditems(currentItem);
+		if (position >= 0) {
 			modifyGroceryitem(position, newItem);
 		}
 	}
@@ -30,20 +31,20 @@ public class GroceryList {
 	private void modifyGroceryitem(int postion, String newItem) {
 
 		groceryList.set(postion, newItem);
-		System.out.println("Grocery item "+ (postion+1) + " has been modified");
+		System.out.println("Grocery item " + (postion + 1) + " has been modified");
 	}
 
 	public void removegrocerItem(String item) {
-		int position = finditems(item); 
-		if( position >= 0) {
+		int position = finditems(item);
+		if (position >= 0) {
 			removegrocerItem(position);
 		}
 	}
 
 	private void removegrocerItem(int position) {
-		String theItem= groceryList.get(position);
+		String theItem = groceryList.get(position);
 		groceryList.remove(position);
-		System.out.println("  Removed item "+theItem);
+		System.out.println("  Removed item " + theItem);
 	}
 
 	private int finditems(String searchItem) {
@@ -52,9 +53,9 @@ public class GroceryList {
 
 	public boolean onFile(String searchItem) {
 		int position = finditems(searchItem);
-		if(position >= 0) {
+		if (position >= 0) {
 
-			return  true;
+			return true;
 		}
 
 		return false;
